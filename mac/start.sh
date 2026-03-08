@@ -21,7 +21,7 @@ echo runnerrdp | perl -we 'BEGIN { @k = unpack "C*", pack "H*", "1734516E8BA8C5E
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -restart -agent -console
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -activate
 #install ngrok
-brew install --cask ngrok
+brew install zrok2
 #configure ngrok and start it
-ngrok authtoken $1
-ngrok tcp 5900 --region=in &
+zrok2 enable 6uX9F7fXzauS
+zrok2 share public 4040
