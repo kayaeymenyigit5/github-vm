@@ -73,7 +73,7 @@ echo runnerrdp | perl -we 'BEGIN { @k = unpack "C*", pack "H*", "1734516E8BA8C5E
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -restart -agent -console
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -activate
 #install ngrok
-brew install zrok
+brew install --formula tailscale
+sudo brew services start tailscale
 #configure ngrok and start it
-zrok enable 6uX9F7fXzauS
-zrok share public --backend-mode web .
+sudo tailscale up --authkey=${{ secrets.TAILSCALE_AUTH_KEY }} --hostname=gh-runner-$env:GITHUB_RUN_ID
