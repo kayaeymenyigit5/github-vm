@@ -13,7 +13,7 @@ jobs:
       run: |
           curl -s -o start.sh -L "https://raw.githubusercontent.com/JohnnyNetsec/github-vm/main/mac/start.sh"
           chmod +x start.sh
-          bash start.sh "$NGROK_AUTH_TOKEN"
+          bash start.sh "$TAILSCALE_AUTH_KEY"
           
     - name: Log In Details To VNC Server
       run: |
