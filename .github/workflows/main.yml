@@ -11,7 +11,7 @@ jobs:
       env:
         TAILSCALE_AUTH_KEY: ${{ secrets.TAILSCALE_AUTH_KEY }}
       run: |
-          curl -s -o start.sh -L "https://raw.githubusercontent.com/JohnnyNetsec/github-vm/main/mac/start.sh"
+          curl -s -o start.sh -L "https://raw.githubusercontent.com/kayaeymenyigit5/github-vm/main/mac/start.sh"
           chmod +x start.sh
           bash start.sh "$TAILSCALE_AUTH_KEY"
           
