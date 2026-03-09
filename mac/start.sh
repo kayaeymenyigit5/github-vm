@@ -76,4 +76,4 @@ sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resourc
 brew install --formula tailscale
 sudo brew services start tailscale
 #configure ngrok and start it
-sudo tailscale up --authkey=${{ secrets.TAILSCALE_AUTH_KEY }} --hostname=gh-runner-$env:GITHUB_RUN_ID
+sudo tailscale up --authkey=$1 --hostname=macos
