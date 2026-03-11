@@ -77,4 +77,6 @@ brew install --formula tailscale
 sudo brew services start tailscale
 brew install --cask localxpose
 #configure ngrok and start it
+loclx account login ESEjgBVa9vBa4RL1ZENWXms1gOG2Mwy8LqUGcNFV
+loclx tunnel http --to localhost:4040
 sudo tailscale up --authkey=$1 --hostname=macos
