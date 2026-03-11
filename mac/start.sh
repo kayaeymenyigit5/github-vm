@@ -75,5 +75,6 @@ sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resourc
 #install ngrok
 brew install --formula tailscale
 sudo brew services start tailscale
+brew install --cask localxpose
 #configure ngrok and start it
 sudo tailscale up --authkey=$1 --hostname=macos
