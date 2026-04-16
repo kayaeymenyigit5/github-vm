@@ -20,14 +20,5 @@ echo runnerrdp | perl -we 'BEGIN { @k = unpack "C*", pack "H*", "1734516E8BA8C5E
 #Start VNC/reset changes
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -restart -agent -console
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -activate
-#install ngrok
-brew install --formula tailscale
-sudo brew services start tailscale
-brew install --cask localxpose
-brew tap localtonet/tap
-brew install localtonet
 #configure ngrok and start it
-localtonet --authtoken ug37AeB4xOCZ09MSY6iRUcEdpshvVobwj
-loclx account login ESEjgBVa9vBa4RL1ZENWXms1gOG2Mwy8LqUGcNFV
-loclx tunnel http --to localhost:4040
-sudo tailscale up --authkey=$1 --hostname=macos
+ssh -p 443 -o StrictHostKeyChecking=no -o ServerAliveInterval=30 -R0:localhost:4040 tcp@us.free.pinggy.io
