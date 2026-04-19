@@ -29,4 +29,4 @@ pip3 install novnc
 git clone https://github.com/novnc/noVNC.git
 cd noVNC 
 ./utils/novnc_proxy --vnc localhost:5900
-websockify 6080 localhost:5900
+websockify 6080 localhost:5901
