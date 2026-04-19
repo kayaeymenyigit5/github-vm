@@ -21,12 +21,8 @@ echo runnerrdp | perl -we 'BEGIN { @k = unpack "C*", pack "H*", "1734516E8BA8C5E
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -restart -agent -console
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -activate
 #configure ngrok and start it
-brew install libvncserver
-git clone https://github.com/LibVNC/macVNC
-cd macVNC
-mkdir build
-cd build
-cmake ..
-cmake --build .
-cmake --install .
-./macVNC.app/Contents/MacOS/macVNC -rfbport 5901
+brew install python
+pip3 install websockify
+pip3 install novnc
+novnc --vnc localhost:5900
+websockify 6080 localhost:5901
