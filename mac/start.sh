@@ -26,5 +26,7 @@ source venv/bin/activate
 python3 -m pip install xyz
 pip3 install websockify
 pip3 install novnc
-novnc --vnc localhost:5900
-websockify 6080 localhost:5901
+git clone https://github.com/novnc/noVNC.git
+cd noVNC 
+./utils/novnc_proxy --vnc localhost:5900
+websockify 6081 localhost:5900
