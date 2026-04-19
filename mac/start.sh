@@ -22,8 +22,8 @@ sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resourc
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -activate
 #configure ngrok and start it
 brew install libvncserver
-brew install git
 git clone https://github.com/LibVNC/macVNC
+cd macVNC
 mkdir build
 cd build
 cmake ..
