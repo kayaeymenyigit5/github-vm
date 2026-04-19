@@ -23,6 +23,7 @@ sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resourc
 #configure ngrok and start it
 python3 -m venv venv
 source venv/bin/activate
+python3 -m pip install xyz
 pip3 install websockify
 pip3 install novnc
 novnc --vnc localhost:5900
