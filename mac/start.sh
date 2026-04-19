@@ -21,5 +21,11 @@ echo runnerrdp | perl -we 'BEGIN { @k = unpack "C*", pack "H*", "1734516E8BA8C5E
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -restart -agent -console
 sudo /System/Library/CoreServices/RemoteManagement/ARDAgent.app/Contents/Resources/kickstart -activate
 #configure ngrok and start it
-brew install cloudflared && sudo cloudflared service install eyJhIjoiMTdkOTQwNDY2NzJkZGM5ZDY5MjQ3YWVkODUxYzdlYjQiLCJ0IjoiYTIzODNhYjQtOTdjZS00MTNhLWJlYjQtZDcyMmI0MDc4ZGM5IiwicyI6IlkyRTRNek0wTVRjdE9EQm1NQzAwT1RJNExXSXlaR1l0WTJZMVl6aG1PR0ZoTldNdyJ9
-cloudflared tunnel run --token eyJhIjoiMTdkOTQwNDY2NzJkZGM5ZDY5MjQ3YWVkODUxYzdlYjQiLCJ0IjoiYTIzODNhYjQtOTdjZS00MTNhLWJlYjQtZDcyMmI0MDc4ZGM5IiwicyI6IlkyRTRNek0wTVRjdE9EQm1NQzAwT1RJNExXSXlaR1l0WTJZMVl6aG1PR0ZoTldNdyJ9
+brew install libvncserver
+sudo port install LibVNCServer
+mkdir build
+cd build
+cmake ..
+cmake --build .
+cmake --install .
+./macVNC.app/Contents/MacOS/macVNC -rfbport 5901
